@@ -3,6 +3,10 @@ from apscheduler.triggers.cron import CronTrigger
 from utils.mail_utils import EmailSender
 from datetime import datetime, timedelta
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 class ReminderScheduler:
     def __init__(self, app):
         self.app = app
