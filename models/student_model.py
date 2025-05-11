@@ -9,7 +9,8 @@ class StudentModel:
         
     def get_all_students(self):
         try:
-            return list(self.db.students.find())
+            # Sort students by name in ascending order
+            return list(self.db.students.find().sort('name', 1))
         except Exception as e:
             print(f"Error fetching students: {str(e)}")
             return []

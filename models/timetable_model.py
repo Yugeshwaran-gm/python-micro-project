@@ -9,7 +9,8 @@ class TimetableModel:
         
     def get_all_timetables(self):
         try:
-            return list(self.db.timetables.find())
+            # Sort timetables by time in ascending order
+            return list(self.db.timetables.find().sort('time', 1))
         except Exception as e:
             print(f"Error fetching timetables: {str(e)}")
             return []
