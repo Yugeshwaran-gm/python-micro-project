@@ -60,7 +60,7 @@ def init_database():
     except Exception as e:
         print(f"Error during database initialization: {str(e)}")
         print("\nPlease check your .env file contains:")
-        print("MONGO_URI=mongodb+srv://yugeshwarang775:python%40123@timetable.8nj2e5p.mongodb.net/")
+        # print("MONGO_URI=mongodb+srv://yugeshwarang775:python%40123@timetable.8nj2e5p.mongodb.net/")
 
 if __name__ == "__main__":
     init_database()
