@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<div class="dashboard">
+    <h3>Timetable Management</h3>
+    <a href="{{ url_for('timetable.edit_timetable', timetable_id='new') }}" class="btn btn-primary mb-3">Add New Timetable Entry</a>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for timetable in timetables %}
+            <tr>
+                <td>{{ timetable.time }}</td>
+                <td>{{ timetable.monday }}</td>
+                <td>{{ timetable.tuesday }}</td>
+                <td>{{ timetable.wednesday }}</td>
+                <td>{{ timetable.thursday }}</td>
+                <td>{{ timetable.friday }}</td>
+                <td>
+                    <a href="{{ url_for('timetable.edit_timetable', timetable_id=timetable._id) }}" class="btn btn-sm btn-info">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Timetable</h2>
+<div class="timetable">
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for timetable in timetables %}
+            <tr>
+                <td>{{ timetable.time }}</td>
+                <td>{{ timetable.monday }}</td>
+                <td>{{ timetable.tuesday }}</td>
+                <td>{{ timetable.wednesday }}</td>
+                <td>{{ timetable.thursday }}</td>
+                <td>{{ timetable.friday }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
